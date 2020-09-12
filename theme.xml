@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Theme: Carbon
+version: 2.0
+author: Eric Hettervik (Rookervik)
+license: creative commons CC-BY-NC-SA
+originally based on: "simple" by nils bonenberger
+-->
+<theme defaultView="detailed">
+  <formatVersion>7</formatVersion>
+  <variables>
+
+  </variables>
+  <subset name="컨트롤러 아이콘" displayName="테마 컨트롤러 아이콘">
+    <include subset="iconset" name="01-XBOX360">./iconsets/xbox.xml</include>
+    <include subset="iconset" name="02-standard icons">./iconsets/default.xml</include>
+    <include subset="iconset" name="03-SNES ALT">./iconsets/snesalt.xml</include>
+    <include subset="iconset" name="04-SNES">./iconsets/snes.xml</include>
+    <include subset="iconset" name="05-PSX">./iconsets/psx.xml</include>
+  </subset>
+  <!-- Subset options for color  -->
+  <subset name="시스템 컬러" displayName="테마 시스템 컬러">
+    <include name="01-Blue" displayName="01-블루">./art/colors/blue.xml</include>
+    <include name="02-Red" displayName="02-레드">./art/colors/red.xml</include>
+    <include name="03-Green" displayName="03-그린">./art/colors/green.xml</include>
+    <include name="04-Yellow" displayName="04-옐로우">./art/colors/yellow.xml</include>
+    <include name="05-Pink" displayName="05-핑크">./art/colors/pink.xml</include>
+    <include name="06-Aqua" displayName="06-아쿠아">./art/colors/aqua.xml</include>
+    <include name="07-Purple" displayName="07-퍼플">./art/colors/purple.xml</include>
+	<include name="08-Silver" displayName="08-실버">./art/colors/silver.xml</include>
+	<include name="09-BlueSteel" displayName="09-블루스틸">./art/colors/bluesteel.xml</include>
+	<include name="10-Graphite" displayName="10-그라파이트">./art/colors/graphite.xml</include>
+  </subset>
+  <view name="system,basic,detailed">
+    <helpsystem name="help">
+      <textColor>ffffff</textColor>
+      <origin>0.5 1</origin>
+      <pos>0.5 0.985</pos>
+      <fontSize>0.035</fontSize>
+      <verticalAlignment>center</verticalAlignment>
+      <horizontalAlignment>center</horizontalAlignment>
+    </helpsystem>
+  </view>
+  <view name="system">
+    <image name="background" extra="static">
+      <tile>false</tile>
+      <size>1 1</size>
+      <pos>0 0</pos>
+      <origin>0 0</origin>
+      <path>./art/bg.png</path>
+      <zIndex>10</zIndex>
+    </image>
+    <image name="bottom" extra="true">
+      <pos>0 1</pos>
+      <origin>0 1</origin>
+      <size>1 0.065</size>
+      <path>./art/bottom.png</path>
+      <color>00ff0000</color>
+      <zIndex>13</zIndex>
+    </image>
+    <image name="top-shadow" extra="true">
+      <path>./art/shadow.png</path>
+      <color>00ff0000</color>
+      <pos>0 0.16</pos>
+      <origin>0 0</origin>
+      <size>1 0.04</size>
+      <zIndex>11</zIndex>
+    </image>
+    <image name="top" extra="true">
+      <pos>0 0</pos>
+      <origin>0 0</origin>
+      <size>1 0.16</size>
+      <path>./art/top.png</path>
+      <color>00ff0000</color>
+    </image>
+    <text name="logoText">
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <color>${baseColor}</color>
+      <forceUppercase>true</forceUppercase>
+    </text>
+    <image name="logo">
+      <path>./art/logos/${system.theme}.png</path>
+      <path>./art/logos/${system.theme}.svg</path>
+      <path>./art/logos/${system.theme}2.svg</path>
+      <path>./art/logos/${system.theme}2.png</path>
+    </image>
+
+    <image name="logo" region="eu">
+    </image>
+    <image name="logo" region="us">
+      <path>./art/logos/us/${system.theme}.png</path>
+      <path>./art/logos/us/${system.theme}.svg</path>
+      <path>./art/logos/us/${system.theme}2.png</path>
+      <path>./art/logos/us/${system.theme}2.svg</path>
+    </image>
+    <image name="logo" region="jp">
+      <path>./art/logos/jp/${system.theme}.png</path>
+      <path>./art/logos/jp/${system.theme}.svg</path>
+      <path>./art/logos/jp/${system.theme}2.png</path>
+      <path>./art/logos/jp/${system.theme}2.svg</path>
+    </image>
+    <image name="ControllerOverlay" extra="true">
+      <tile>false</tile>
+      <pos>0.5 0.21</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.3 0</size>
+      <path>./art/splash.svg</path>
+      <path>./art/controllers/${system.theme}.svg</path>
+      <zIndex>19</zIndex>
+    </image>
+  </view>
+  
+  <feature supported="manufacturer">
+    <view name="system">
+      <text name="manufacturerName" extra="static">
+        <pos>0.025 0.8</pos>
+        <size>0.98 0.15</size>
+        <text>Manufacturer : ${system.manufacturer}
+Release Year : ${system.releaseYear}</text>
+        <text lang="fr">Constructeur : ${system.manufacturer}
+Année de sortie : ${system.releaseYear}</text>
+        <alignment>left</alignment>
+        <fontPath>./art/NanumGothic.ttf</fontPath>
+        <fontSize>0.024</fontSize>
+        <glowSize>1</glowSize>
+        <glowColor>${glowColor}</glowColor>
+        <color>C0C0C0</color>      
+        <zIndex>100</zIndex>
+      </text>
+    </view>
+  </feature>
+  
+  <!-- Subset options for screen -->
+  <subset name="systemview" displayName="${systemViewName}">
+    <include name="01-Transparent" tinyScreen="false" displayName="01-투명">./art/systemview/transparent.xml</include>
+    <include name="02-Legacy" tinyScreen="false" displayName="02-기본">./art/systemview/legacy.xml</include>
+    <include name="03-Vertical" displayName="03-세로">./art/systemview/vertical.xml</include>
+    <include name="04-Wheel" displayName="04-휠">./art/systemview/wheel.xml</include>
+  </subset>
+  <!-- Subset option for System view background -->
+  <subset name="시스템 배경" displayName="테마 시스템 배경">
+    <include name="01-Controllers" displayName="01-컨트롤러">./art/systemsbk/animatedbackgroundsubset.xml</include>
+    <include tinyScreen="false" name="02-Mini-consoles" displayName="02-콘솔(미니)">./art/systemsbk/consoles.xml</include>
+    <include name="03-Consoles" displayName="03-콘솔(전체)">./art/systemsbk/batomachines.xml</include>
+    <include tinyScreen="true" name="Mini-consoles">./art/systemsbk/consoles.xml</include>
+  </subset>
+  <view name="screen">
+    <text name="clock">
+      <color>FFFFFF</color>
+      <fontSize>0.038</fontSize>
+      <pos>0.87 0.985</pos>
+	  <origin>0.5 1</origin>
+      <size>0.079 0.025</size>
+	  <fontPath>./art/fonts/ds-digib.ttf</fontPath>
+      <alignment>right</alignment>
+      <verticalAlignment>center</verticalAlignment>
+    </text>
+    <controllerActivity name="controllerActivity">
+      <pos>0.080 0.96</pos>
+      <size>0.085 0.025</size>
+      <itemSpacing>0.003</itemSpacing>
+      <imagePath>./art/gamepad.svg</imagePath>
+      <color>FFFFFF80</color>
+      <activityColor>A0A0FFC0</activityColor>
+      <hotkeyColor>FFA0A0C0</hotkeyColor>
+    </controllerActivity>
+    <batteryIndicator name="batteryIndicator">
+      <pos>0.955 0.0125</pos>
+      <size>0.033 0.033</size>
+      <incharge>./art/battery/incharge.svg</incharge>
+      <full>./art/battery/full.svg</full>
+      <at75>./art/battery/75.svg</at75>
+      <at50>./art/battery/50.svg</at50>
+      <at25>./art/battery/25.svg</at25>
+      <empty>./art/battery/empty.svg</empty>
+      <color>FFFFFFA0</color>
+    </batteryIndicator>
+    <batteryIndicator name="batteryIndicator" tinyScreen="true">
+      <pos>0.915 0.013</pos>
+      <size>0.07 0.07</size>
+    </batteryIndicator>
+  </view>
+  <view name="menu">
+    <menuText name="menutitle">
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0.044</fontSize>
+      <color>FAFAFA</color>
+    </menuText>
+    <menuText name="menufooter">
+      <fontPath>./art/NanumGothic.ttf</fontPath>
+      <fontSize>0.02</fontSize>
+      <color>777777FF</color>
+    </menuText>
+    <menuText name="menutext">
+      <fontPath>./art/NanumGothic.ttf</fontPath>
+      <fontSize>0.038</fontSize>
+      <color>969696</color>
+      <separatorColor>323232FF</separatorColor>
+      <selectorColor>${baseColor}</selectorColor>
+      <selectorColorEnd>${gradientEndColor}</selectorColorEnd>
+      <selectedColor>FFFFFF</selectedColor>
+      <selectorGradientType>horizontal</selectorGradientType>
+    </menuText>
+    <menuTextSmall name="menutextsmall">
+      <fontPath>./art/NanumGothic.ttf</fontPath>
+      <fontSize>0.02</fontSize>
+      <color>${groupColor}</color>
+    </menuTextSmall>
+    <menuGroup name="menugroup">
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0.025</fontSize>
+      <color>${groupColor}</color>
+      <separatorColor>${groupSeparatorColor}</separatorColor>
+      <backgroundColor>00000000</backgroundColor>
+      <lineSpacing>2.5</lineSpacing>
+    </menuGroup>
+    <menuBackground name="menubg">
+      <color>242424</color>
+      <cornerSize>32 32</cornerSize>
+      <path>./art/frame.png</path>
+    </menuBackground>
+    <menuIcons name="menuicons">
+      <iconKodi>./art/icons/Kodi.png</iconKodi>
+      <iconSystem>./art/icons/System.png</iconSystem>
+      <iconUpdates>./art/icons/Updates.png</iconUpdates>
+      <iconGames>./art/icons/Games.png</iconGames>
+      <iconControllers>./art/icons/Controllers.png</iconControllers>
+      <iconUI>./art/icons/UI.png</iconUI>
+      <iconSound>./art/icons/Sound.png</iconSound>
+      <iconNetwork>./art/icons/Network.png</iconNetwork>
+      <iconScraper>./art/icons/Scraper.png</iconScraper>
+      <iconAdvanced>./art/icons/Advanced.png</iconAdvanced>
+      <iconQuit>./art/icons/Quit.png</iconQuit>
+      <iconRestart>./art/icons/Restart.png</iconRestart>
+      <iconShutdown>./art/icons/Shutdown.png</iconShutdown>
+      <iconFastShutdown>./art/icons/Fastshutdown.png</iconFastShutdown>
+      <iconRetroachievements>./art/icons/Contest.png</iconRetroachievements>
+      <iconManual>./art/icons/Manual.png</iconManual>
+    </menuIcons>
+    <menuTextEdit name="menutextedit">
+      <inactive>./art/textinput_ninepatch.png</inactive>
+      <active>./art/textinput_ninepatch_active.png</active>
+    </menuTextEdit>
+    <menuButton name="menubutton">
+      <path>./art/button.png</path>
+      <filledPath>./art/button_filled.png</filledPath>
+    </menuButton>
+  </view>
+  <view name="basic">
+    <image name="background" extra="true">
+      <tile>false</tile>
+      <pos>0 0</pos>
+      <origin>0 0</origin>
+      <size>1 1</size>
+    </image>
+    <image name="md_image">
+      <pos>0.7911 0.4259</pos>
+      <maxSize>0.333 0.4444</maxSize>
+      <origin>0.5 0.5</origin>
+      <snapshotSource>image</snapshotSource>
+      <zIndex>100</zIndex>
+    </image>
+    <textlist name="gamelist">
+      <selectorImagePath>./art/selector.png</selectorImagePath>
+      <selectorHeight>0.0648</selectorHeight>
+      <selectorColor>0f85a5</selectorColor>
+      <selectorColorEnd>0f6585</selectorColorEnd>
+      <selectedColor>${basecolor}</selectedColor>
+      <primaryColor>ffffff</primaryColor>
+      <secondaryColor>ffffff</secondaryColor>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0.030</fontSize>
+      <pos>0.278 0.5324</pos>
+      <size>0.562 0.6667</size>
+	  <origin>0.5 0.5</origin>
+      <alignment>left</alignment>
+      <horizontalMargin>0.05</horizontalMargin>
+      <forceUppercase>1</forceUppercase>
+      <scrollSound>./art/scroll.wav</scrollSound>
+      <lines>9</lines>
+    </textlist>
+  </view>
+  <view name="detailed">
+    <video name="md_video">
+      <pos>0.7911 0.4259</pos>
+      <maxSize>0.333 0.4444</maxSize>
+      <origin>0.5 0.5</origin>
+      <delay>0.8</delay>
+      <showSnapshotNoVideo>true</showSnapshotNoVideo>
+      <showSnapshotDelay>true</showSnapshotDelay>
+      <loops>1</loops>
+      <roundCorners>0.02</roundCorners>
+    </video>
+    <image name="background">
+      <tile>true</tile>
+      <pos>0 0</pos>
+      <origin>0 0</origin>
+      <size>1 1</size>
+    </image>
+    <text name="md_lbl_genre, md_genre, md_lbl_rating, md_lbl_developer, md_developer, md_lbl_publisher, md_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_players, md_players, md_lbl_releasedate">
+      <color>00ff0000</color>
+      <forceUppercase>0</forceUppercase>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0</fontSize>
+    </text>
+    <text name="md_lbl_rating, md_lbl_publisher, md_publisher, md_lbl_lastplayed, md_lbl_playcount, md_playcount, md_lbl_releasedate, md_lbl_genre, md_lbl_developer">
+      <pos>1 1</pos>
+    </text>
+    <datetime name="md_lastplayed, md_releasedate">
+      <color>00ff0000</color>
+      <forceUppercase>0</forceUppercase>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0</fontSize>
+    </datetime>
+    <datetime name="md_lastplayed">
+      <pos>1 1</pos>
+    </datetime>
+    <image name="md_flag">
+      <origin>0 0.5</origin>
+      <pos>0.530 0.9</pos>
+      <maxSize>0 0</maxSize>
+    </image>
+    <text name="md_developer">
+      <color>00ff0000</color>
+      <pos>0.558 0.875</pos>
+      <size>-0 -0</size>
+      <alignment>left</alignment>
+      <fontSize>0</fontSize>
+    </text>
+    <rating name="md_rating">
+      <pos>0.9 0.886</pos>
+      <size>-0 -0</size>
+      <color>00ff0000</color>
+      <unfilledColor>00ff0000</unfilledColor>
+    </rating>
+    <text name="md_lbl_players">
+      <pos>0.9 0.645</pos>
+      <size>0 0</size>
+    </text>
+    <text name="md_players">
+      <color>00ff0000</color>
+      <pos>0.965 0.645</pos>
+      <size>0 0</size>
+    </text>
+    <text name="md_lbl_releasedate">
+      <color>00ff0000</color>
+      <pos>0.53 0.645</pos>
+      <size>0 0</size>
+    </text>
+    <datetime name="md_releasedate">
+      <color>00ff0000</color>
+      <pos>0.63 0.645</pos>
+      <size>0 0</size>
+    </datetime>
+    <text name="md_description">
+      <pos>0.530 0.7</pos>
+      <size>0.46 0.16</size>
+      <color>00ff0000</color>
+      <forceUppercase>0</forceUppercase>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <fontSize>0 0</fontSize>
+    </text>
+    <textlist name="gamelist">
+      <selectorImagePath>./art/selector.png</selectorImagePath>
+      <selectorHeight>0.0648</selectorHeight>
+      <selectorColor>0f85a5</selectorColor>
+      <selectorColorEnd>0f6585</selectorColorEnd>
+      <selectedColor>${basecolor}</selectedColor>
+      <primaryColor>ffffff</primaryColor>
+      <secondaryColor>ffffff</secondaryColor>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <forceUppercase>1</forceUppercase>
+      <pos>0.278 0.5324</pos>
+      <size>0.562 0.6667</size>
+	  <origin>0.5 0.5</origin>
+      <alignment>left</alignment>
+      <horizontalMargin>0.05</horizontalMargin>
+      <fontSize>0.030</fontSize>
+      <scrollSound>./art/scroll.wav</scrollSound>
+      <lines>9</lines>
+    </textlist>
+    <image name="md_hidden">
+      <path>./art/hidden.svg</path>
+      <pos>0.975 0.21</pos>
+      <maxSize>0 0</maxSize>      
+      <origin>0.5 0.5</origin>
+      <color>00ff0000</color>
+      <zIndex>150</zIndex>
+    </image>
+
+    <image name="md_kidgame">     
+      <path>./art/kid.svg</path>
+      <pos>0.86 0.9</pos>
+      <maxSize>0.02 0.03</maxSize>      
+      <origin>0.5 0.5</origin>
+      <color>969696</color>
+      <zIndex>150</zIndex>
+    </image>
+
+    <image name="md_manual">
+      <path>./art/manual.svg</path>
+      <pos>0.882 0.9</pos>
+      <maxSize>0.02 0.03</maxSize>      
+      <origin>0.5 0.5</origin>
+      <color>969696</color>
+      <zIndex>150</zIndex>
+    </image>
+
+<!--
+    <image name="md_favorite">
+      <pos>0.975 0.21</pos>
+      <maxSize>0.02 0.03</maxSize>      
+      <path>./art/favorite.svg</path>
+      <origin>0.5 0.5</origin>
+      <color>969696</color>
+      <zIndex>60</zIndex>
+    </image>-->
+  </view>
+  <view name="basic, detailed">
+    <text name="logoText">
+      <pos>0.295 0.08</pos>
+      <maxSize>0.3 0.13</maxSize>
+      <origin>0.5 0.5</origin>
+      <alignment>center</alignment>
+      <fontSize>0.08</fontSize>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <!--<alignment>left</alignment>-->
+      <color>${baseColor}</color>
+      <!-- <forceUppercase>true</forceUppercase>-->
+    </text>
+    <image name="logo">
+      <!-- try png -->
+      <path>./art/logos/${system.theme}.png</path>
+      <path>./art/logos/${system.theme}.svg</path>
+      <!-- if system2 exists, take this version -->
+      <path>./art/logos/${system.theme}2.svg</path>
+      <path>./art/logos/${system.theme}2.png</path>
+      <!--<pos>0.266 0.074</pos><maxSize>0.460 0.126</maxSize>-->
+      <pos>0.295 0.08</pos>
+      <maxSize>0.3 0.13</maxSize>
+      <origin>0.5 0.5</origin>
+    </image>
+
+    <image name="logo" region="eu">
+    </image>
+    <image name="logo" region="us">
+      <path>./art/logos/us/${system.theme}.png</path>
+      <path>./art/logos/us/${system.theme}.svg</path>
+      <path>./art/logos/us/${system.theme}2.png</path>
+      <path>./art/logos/us/${system.theme}2.svg</path>
+    </image>
+    <image name="logo" region="jp">
+      <path>./art/logos/jp/${system.theme}.png</path>
+      <path>./art/logos/jp/${system.theme}.svg</path>
+      <path>./art/logos/jp/${system.theme}2.png</path>
+      <path>./art/logos/jp/${system.theme}2.svg</path>
+    </image>
+	
+    <text name="folderpath">
+      <pos>0.05 0.132</pos>
+      <size>0.90 0.02</size>  
+      <color>B0B0B0</color>  
+      <alignment>center</alignment>
+      <fontSize>0.016</fontSize>
+      <fontPath>./art/NanumGothicBold.ttf</fontPath>
+      <forceUppercase>true</forceUppercase>
+      <zIndex>200</zIndex>
+    </text>  
+  </view>
+
+  <!-- Subset options for help -->
+  <!-- Subset options for screen -->
+  <subset name="쉐이더" displayName="쉐이더">
+    <include name="끄기" displayName="${none}"/>
+    <include name="스캔라인">./art/scanlines.xml</include>
+    <include name="Crt모니터">./art/crt.xml</include>
+  </subset>
+
+</theme>

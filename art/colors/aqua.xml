@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+  <formatVersion>7</formatVersion>
+  <variables>
+    <baseColor>3a4d6d</baseColor>
+    <gradientEndColor>3a4d6d</gradientEndColor>
+    <centerFadeColor>00ff0000</centerFadeColor>
+    <glowColor>3060Ab24</glowColor>
+    <systemInfoColor>FFFFFF</systemInfoColor>
+    <backgroundColor>00ff0000</backgroundColor>
+    <groupColor>5178C3</groupColor>
+    <groupSeparatorColor>3B5B96</groupSeparatorColor>
+  </variables>
+  <view name="system">
+    <image name="background" extra="true">
+      <tile>false</tile>
+      <path>./art/colors/bg.png</path>
+      <color>09b584</color>
+    </image>
+    <image name="ControllerOverlay" extra="true">
+      <color>09b584</color>
+    </image>
+  </view>
+  <view name="basic">
+    <image name="background" extra="true">
+      <path>./art/colors/aqua.png</path>
+    </image>
+  </view>
+  <view name="basic, detailed">
+    <image name="background" extra="true">
+      <path>./art/colors/aqua.png</path>
+    </image>
+  </view>
+
+</theme>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+  <formatVersion>7</formatVersion>
+  <variables>
+    <animatedBackground>Animated background</animatedBackground>
+  </variables>
+  <subset tinyScreen="false" name="애니메이션 배경" displayName="애니메이션 배경">
+    <include name="껴기" displayName="${no}"/>
+    <include name="끄기" displayName="${yes}">./animatedbackground.xml</include>
+  </subset>
+</theme>
